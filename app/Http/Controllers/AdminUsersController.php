@@ -43,8 +43,8 @@ class AdminUsersController extends Controller
     {
 //        $name = $request->input('name', 'Sally');
 //        $email = $request->input('email');
-
-        return view('admin.users.create');
+        User::create($request->all());
+        return redirect('admin/users');
     }
 
     /**

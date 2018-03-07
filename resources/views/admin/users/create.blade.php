@@ -2,7 +2,7 @@
 @section('content')
     <h1> Create Users</h1>
 
-    {!! Form::open(['methode'=>'POST', 'action'=>'AdminUsersController@store'])!!}
+    {!! Form::open(['methode'=>'POST', 'action'=>'AdminUsersController@store', 'file'=>true])!!}
 
         {{csrf_field()}}
         {{--{{csrf_token()}}--}}
@@ -33,6 +33,10 @@
                 {!! Form::label('password' ,' Votre password : ', ['class' => 'awesome']) !!}
                 {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Votre mot de passe ici...']) !!}
                 {{--{!! Form::password('password', ['class' => 'awesome'] !!}--}}
+        </div><br>
+        <div class="form-groupe">
+                {!! Form::label('photo_id' ,' Inséré votre foto ici SVP : ', ['class' => 'awesome']) !!}
+                {!! Form::file('photo_id', null, ['class'=>'form-control', 'placeholder'=>'Your picture ']) !!}
         </div><br>
         <div class="form-groupe">
             {!! Form::submit(' Create User ', ['class'=>'btn btn-primary'], ['placeholder'=>'Entrer titre']) !!}
