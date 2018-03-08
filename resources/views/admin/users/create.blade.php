@@ -2,13 +2,11 @@
 @section('content')
     <h1> Create Users</h1>
 
-    {!! Form::open(['methode'=>'POST', 'action'=>'AdminUsersController@store', 'file'=>true])!!}
-
+    {!! Form::open(['methode'=>'POST', 'action'=>'AdminUsersController@store', 'files'=>true])!!}
         {{csrf_field()}}
-        {{--{{csrf_token()}}--}}
         <div class="form-groupe">
             {!! Form::label('name' ,' Name : ', ['class' => 'awesome']) !!}
-            {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Votre nom']) !!}
+            {!! Form::text('name', null, ['class'=>'form-control', 'placeholder'=>'Votre nom'])  !!}
         </div><br>
          <div class="form-groupe">
             {!! Form::label('email' ,' Email : ', ['class' => 'awesome']) !!}
@@ -17,22 +15,14 @@
         <div class="form-groupe">
             {!! Form::label('role_id' ,' Role : ', ['class' => 'awesome']) !!}
             {!! Form::select('role_id', [''=>'Choose Options'] + $roles , null, ['class'=>'form-control'])!!}
-            {{--{!! Form::text('role_id',[''=>'choose option'] + $roles, null, ['class'=>'form-control']) !!}--}}
-
-
-            {{--{!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), 0 , ['class'=>'form-control'])!!}--}}
-            {{--{!! Form::select('role_id', ['L' => 'Large', 'S' => 'Small'], ['class' => 'awesome'] ) !!}--}}
         </div><br>
         <div class="form-groupe">
             {!! Form::label('is_active' ,' Status: ', ['class' => 'awesome']) !!}
-            {{--{!! Form::text('is_active', null, ['class'=>'form-control', 'placeholder'=> '']) !!}--}}
             {!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), 0 , ['class'=>'form-control'])!!}
-
         </div><br>
         <div class="form-groupe">
                 {!! Form::label('password' ,' Votre password : ', ['class' => 'awesome']) !!}
                 {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Votre mot de passe ici...']) !!}
-                {{--{!! Form::password('password', ['class' => 'awesome'] !!}--}}
         </div><br>
         <div class="form-groupe">
                 {!! Form::label('photo_id' ,' Inséré votre foto ici SVP : ', ['class' => 'awesome']) !!}
