@@ -22,21 +22,27 @@
     </div><br>
     <div class="form-groupe">
         {!! Form::label('is_active' ,' Status: ', ['class' => 'awesome']) !!}
-        {!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), 0 , ['class'=>'form-control'])!!}
+        {!! Form::select('is_active', array(1 => 'Active', 0=> 'Not Active'), null , ['class'=>'form-control'])!!}
     </div><br>
+        <div class="form-groupe">
+            {!! Form::label('photo_id' ,' Inséré votre foto ici SVP : ', ['class' => 'awesome']) !!}
+            {!! Form::file('photo_id', null, ['class'=>'form-control', 'placeholder'=>'Your picture ']) !!}
+        </div><br>
     <div class="form-groupe">
         {!! Form::label('password' ,' Votre password : ', ['class' => 'awesome']) !!}
         {!! Form::password('password', ['class'=>'form-control', 'placeholder'=>'Votre mot de passe ici...']) !!}
     </div><br>
-    <div class="form-groupe">
-        {!! Form::label('photo_id' ,' Inséré votre foto ici SVP : ', ['class' => 'awesome']) !!}
-        {!! Form::file('photo_id', null, ['class'=>'form-control', 'placeholder'=>'Your picture ']) !!}
-    </div><br>
-    <div class="form-groupe">
-        {!! Form::submit(' Create User ', ['class'=>'btn btn-primary'], ['placeholder'=>'Entrer titre']) !!}
-    </div>
 
-    {!! Form::close() !!}
+        <div class="form-group">
+            {!! Form::submit('Update User', ['class'=>'btn btn-primary col-sm-5']) !!}
+        </div>
+        {!! Form::close() !!}
+        {!! Form::open(['method'=>'DELETE', 'action'=> ['AdminUsersController@destroy', $user->id]]) !!}
+        <div  id="botona" class="form-group" >
+            {!! Form::submit('Delete user', ['class'=>'btn btn-danger col-sm-5']) !!}
+        </div>
+
+        {!! Form::close() !!}
     </div>
     </div>
     <dic class="row">

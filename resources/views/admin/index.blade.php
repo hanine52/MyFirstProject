@@ -7,7 +7,7 @@
 @section('content')
 
 
-    <h1>Admin benhammou</h1>
+    <h1>{{Auth::user()->name}} Admin </h1>
 
 
 
